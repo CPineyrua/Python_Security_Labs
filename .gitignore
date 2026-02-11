@@ -1,0 +1,4 @@
+# Ignorar reportes
+scan_report.txt
+*.log
+__pycache__/
