@@ -1,41 +1,51 @@
 # Python Security Labs 🛡️
 
-[Español](#español) | [English](#english)
+Español | [English](#english)
 
----
-
-<a name="español"></a>
 ## 🇪🇸 Español
 
-### Descripción
-Este repositorio contiene una colección de herramientas experimentales desarrolladas en Python para el análisis de redes y auditoría de seguridad.
+Este repositorio es un ecosistema de herramientas profesionales desarrolladas en Python para la automatización de tareas de ciberseguridad, abarcando desde el análisis de redes hasta la forense digital y auditoría web.
 
-#### Laboratorio 01: Escáner de Puertos TCP Básico
-Este script realiza un escaneo de puertos específico (80, 443) sobre una dirección IP. Utiliza el protocolo de enlace de tres vías (**TCP Three-Way Handshake**) para determinar la disponibilidad del servicio.
+### 🛠️ Laboratorios Disponibles
 
-**Conceptos Técnicos Aplicados:**
-* **Librería Socket:** Comunicación de bajo nivel.
-* **Manejo de Excepciones:** Robustez mediante bloques `try-except-finally`.
-* **F-Strings:** Reportes dinámicos y legibles.
+#### 1. Network Scanner (v5 - Professional CLI)
+Escáner de puertos avanzado que utiliza el protocolo TCP para identificar servicios activos.
+* **Capacidades:** Soporta escaneo por rangos (`20-80`) y listas específicas (`22,80,443`).
+* **Conceptos:** Automatización de CLI con `sys.argv`, validación de IPs y manejo de sockets.
+* **Uso:** `python network_scanner_v5.py 127.0.0.1 20-443`
+
+#### 2. Integrity Manager (IDS Simulado)
+Sistema de detección de integridad basado en criptografía para proteger archivos contra manipulaciones.
+* **Capacidades:** Registro de huellas digitales (SHA-256) y verificación automática con persistencia en JSON.
+* **Conceptos:** Criptografía aplicada (`hashlib`), persistencia de datos y alertas visuales ANSI (Rojo/Verde).
+* **Uso:** `python file_integrity.py register archivo.txt` o `verify archivo.txt`
+
+#### 3. Web Security Auditor
+Scanner de vulnerabilidades en cabeceras HTTP para evaluar la postura de seguridad de aplicaciones web.
+* **Capacidades:** Detección de Banner Grabbing (servidor) y sistema de puntuación (Scoring 0/4).
+* **Conceptos:** Protocolo HTTP, análisis de cabeceras de seguridad (CSP, HSTS, XFO) y auditoría de riesgos.
+* **Uso:** `python web_security_scanner.py google.com`
 
 ---
 
 <a name="english"></a>
 ## 🇺🇸 English
 
-### Description
-This repository features a collection of experimental Python tools designed for network analysis and security auditing.
+A collection of professional Python tools for cybersecurity automation, covering network analysis, digital forensics, and web auditing.
 
-#### Lab 01: Basic TCP Port Scanner
-This script performs a targeted port scan (80, 443) on a given IP address. It leverages the **TCP Three-Way Handshake** protocol to determine service availability.
+### 🛠️ Included Labs
 
-**Technical Concepts Applied:**
-* **Socket Library:** Low-level network communication.
-* **Exception Handling:** Robustness via `try-except-finally` blocks.
-* **F-Strings:** Dynamic and readable reporting.
+* **Advanced Network Scanner:** Hybrid port scanning (ranges/lists) with real-time service detection.
+* **File Integrity Manager:** SHA-256 hashing system with JSON database for automated file tampering detection (Mini-IDS).
+* **Web Security Auditor:** HTTP header analysis tool with banner grabbing and risk scoring system.
 
 ---
 
-### 🚀 Usage / Uso
+### 🚀 Instalación / Installation
+
 ```bash
-python escaneo.py
+# Clonar el repositorio
+git clone [https://github.com/CPineyrua/Python_Security_Labs.git](https://github.com/CPineyrua/Python_Security_Labs.git)
+
+# Instalar dependencias
+pip install requests
